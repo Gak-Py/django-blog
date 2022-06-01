@@ -23,10 +23,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-b(b)2aarnd!jzz7+e-17plv#n6popy%kasoer0xj@0kwv4f4kb'
+try:
+    from .local_settings import *
+except ImportError:
+    import os
+    from dotenv import load_dotenv
+    load_dotenv(verbose=True)
+    project_folder = os.path.expanduser('~/jipdesign.pythonanywhere.com/')  # adjust as appropriate
+    load_dotenv(os.path.join(project_folder, '.env'))
+    SECRET_KEY = 'django-insecure-b(b)2aarnd!jzz7+e-17plv#n6popy%kasoer0xj@0kwv4f4kb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+    DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 

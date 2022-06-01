@@ -15,10 +15,15 @@ import os
 from os.path import join, dirname
 from dotenv import load_dotenv
 
-load_dotenv(verbose=True)
 
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+
+# 開発環境ではlocal_settingsが読み込まれDEBUGがTrueになる
+try:
+    from .local_settings import *
+except ImportError:
+    load_dotenv(verbose=True)
+    project_folder = os.path.expanduser('~/jipdesign.pythonanywhere.com/')  # adjust as appropriate
+    load_dotenv(os.path.join(project_folder, '.env'))
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

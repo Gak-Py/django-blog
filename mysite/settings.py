@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
-from dotenv import load_dotenv
 
 
 
@@ -20,6 +18,8 @@ from dotenv import load_dotenv
 try:
     from .local_settings import *
 except ImportError:
+    import os
+    from dotenv import load_dotenv
     load_dotenv(verbose=True)
     project_folder = os.path.expanduser('~/jipdesign.pythonanywhere.com/')  # adjust as appropriate
     load_dotenv(os.path.join(project_folder, '.env'))

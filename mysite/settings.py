@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 try:
     from .local_settings import *
 except ImportError:
-    import os
     from dotenv import load_dotenv
     # load_dotenv(verbose=True)
     # project_folder = os.path.expanduser('~/jipdesign.pythonanywhere.com/')  # adjust as appropriate
@@ -34,7 +31,7 @@ except ImportError:
     SECRET_KEY = 'django-insecure-b(b)2aarnd!jzz7+e-17plv#n6popy%kasoer0xj@0kwv4f4kb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = False
+    DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 

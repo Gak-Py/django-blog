@@ -28,9 +28,9 @@ try:
 except ImportError:
     import os
     from dotenv import load_dotenv
-    load_dotenv(verbose=True)
-    project_folder = os.path.expanduser('~/jipdesign.pythonanywhere.com/')  # adjust as appropriate
-    load_dotenv(os.path.join(project_folder, '.env'))
+    # load_dotenv(verbose=True)
+    # project_folder = os.path.expanduser('~/jipdesign.pythonanywhere.com/')  # adjust as appropriate
+    # load_dotenv(os.path.join(project_folder, '.env'))
     SECRET_KEY = 'django-insecure-b(b)2aarnd!jzz7+e-17plv#n6popy%kasoer0xj@0kwv4f4kb'
 
 # SECURITY WARNING: don't run with debug turned on in production!

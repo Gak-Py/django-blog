@@ -21,7 +21,7 @@ try:
     from .local_settings import *
 except ImportError:
     load_dotenv(verbose=True)
-    project_folder = os.path.expanduser('~/jipdesign.pythonanywhere.com/')  # adjust as appropriate
+    project_folder = os.path.expanduser('~/jipdesign/jipdesign.pythonanywhere.com/')  # adjust as appropriate
     load_dotenv(os.path.join(project_folder, '.env'))
     SECRET_KEY = os.getenv("SECRET_KEY")
 

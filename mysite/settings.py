@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 try:
     from .local_settings import *
-except ImportError:
+except:
     from dotenv import load_dotenv
     # load_dotenv(verbose=True)
     # project_folder = os.path.expanduser('~/jipdesign.pythonanywhere.com/')  # adjust as appropriate
